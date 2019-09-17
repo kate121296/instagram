@@ -124,7 +124,7 @@ const useStyles = makeStyles({
         paddingBottom:20
     }
 });
-function App() {
+function WelcomePage() {
     const classes = useStyles();
     return (
         <div >
@@ -207,4 +207,4 @@ function App() {
   );
 }
 
-export default App;
+export default WelcomePage;
