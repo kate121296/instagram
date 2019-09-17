@@ -4,7 +4,7 @@ import {useSnackbar} from "notistack";
 import firebase from "./firebaseConfig";
 import withFirebaseAuth from "react-auth-firebase";
 
-import WelcomePage from "./WelcomePage";
+import WelcomePage from "./components/WelcomePage/WelcomePage";
 
 function App({
                  signUpWithEmail,

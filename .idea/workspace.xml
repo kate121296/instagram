@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="Instagram">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WelcomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/WelcomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="Instagram" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +74,7 @@
       <workItem from="1568664348047" duration="1297000" />
       <workItem from="1568719006672" duration="11969000" />
       <workItem from="1568741773740" duration="1923000" />
+      <workItem from="1568748748910" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="WelcomePage">
       <created>1568732588504</created>
