@@ -1,10 +1,12 @@
 import React from 'react';
+import WelcomePage from "./WelcomePage";
 
 function App() {
     return (
         <div>
-            <h1>instagram</h1>
+            <WelcomePage/>
         </div>
+
     );
 }
 
