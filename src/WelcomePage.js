@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
+import {useSnackbar} from "notistack";
 
 const useStyles = makeStyles({
     root: {
@@ -124,8 +125,31 @@ const useStyles = makeStyles({
         paddingBottom:20
     }
 });
-function WelcomePage() {
+const initValues = {
+    email: '',
+    password: '',
+    confirmPassword: '',
+};
+function WelcomePage({
+                         onSignUp={},
+                     }) {
     const classes = useStyles();
+    const { enqueueSnackbar } = useSnackbar();
+    const [values,setValues] = useState(initValues);
+
+    const handleChange = e => {
+        const newValues = {...values};
+        newValues[e.target.name] = e.target.value;
+        setValues(newValues);
+    };
+    const handleSubmit = ()=> {
+        const {email, password, confirmPassword} = values;
+        if(password!== confirmPassword) {
+            enqueueSnackbar('Passwords isn"t match!', { variant: 'warning' });
+            return
+        }
+        onSignUp(email, password);
+    };
     return (
         <div >
             <div className={classes.root}>
@@ -138,26 +162,37 @@ function WelcomePage() {
                             Войти через Facebook
                         </Button>
                         <Typography className={classes.text2}>ИЛИ</Typography>
-                        <form className={classes.container} >
+                        <form className={classes.container} onSubmit={handleSubmit} >
                             <TextField
                                 type="email"
                                 name="email"
                                 variant="outlined"
                                 placeholder="Email"
+                                value={values.email}
+                                onChange={handleChange}
                             />
                             <TextField
                                 type="password"
                                 name="password"
                                 variant="outlined"
                                 placeholder="Password"
+                                value={values.password}
+                                onChange={handleChange}
                             />
                             <TextField
-                                type="confirm password"
-                                name="confirm password"
+                                type="password"
+                                name="confirmPassword"
                                 variant="outlined"
                                 placeholder="Confirm password"
+                                value={values.confirmPassword}
+                                onChange={handleChange}
                             />
-                            <Button variant="contained" color="primary" className={classes.button}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.button}
+                                onClick={handleSubmit}
+                            >
                                 Регистрация
                             </Button>
                         </form>
@@ -204,7 +239,7 @@ function WelcomePage() {
                 <Typography className={classes.text6}>© INSTAGRAM ОТ FACEBOOK, 2019</Typography>
             </footer>
         </div>
-  );
+    );
 }
 
 export default WelcomePage;
