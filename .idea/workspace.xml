@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="Instagram" />
+    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +33,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\webstorm\projects\instagram\src\components\WelcomePage" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -74,7 +79,7 @@
       <workItem from="1568664348047" duration="1297000" />
       <workItem from="1568719006672" duration="11969000" />
       <workItem from="1568741773740" duration="1923000" />
-      <workItem from="1568748748910" duration="620000" />
+      <workItem from="1568748748910" duration="880000" />
     </task>
     <task id="LOCAL-00001" summary="WelcomePage">
       <created>1568732588504</created>
@@ -125,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568735749431</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="folders structure">
+      <created>1568749595716</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1568749595716</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="WelcomePage" />
     <MESSAGE value="Instagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="Instagram" />
+    <MESSAGE value="folders structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="folders structure" />
   </component>
 </project>

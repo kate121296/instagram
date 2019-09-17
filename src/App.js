@@ -7,10 +7,10 @@ import withFirebaseAuth from "react-auth-firebase";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 
 function App({
-                 signUpWithEmail,
-                 user,
-                 error,
-             }) {
+     signUpWithEmail,
+     user,
+     error,
+ }) {
     const uid = getOr(null, ['uid'], user);
     const { enqueueSnackbar } = useSnackbar();
 
