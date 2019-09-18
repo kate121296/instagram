@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="folders structure">
-      <change afterPath="$PROJECT_DIR$/src/components/LoginScreen/LoginScreen.js" afterDir="false" />
+    <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginScreen/LoginScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/WelcomePage/WelcomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WelcomePage/WelcomePage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,7 +85,7 @@
       <workItem from="1568719006672" duration="11969000" />
       <workItem from="1568741773740" duration="1923000" />
       <workItem from="1568748748910" duration="4732000" />
-      <workItem from="1568800685940" duration="1607000" />
+      <workItem from="1568800685940" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="WelcomePage">
       <created>1568732588504</created>
@@ -152,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568749763022</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="LoginScreen">
+      <created>1568806761800</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1568806761800</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +180,7 @@
     <MESSAGE value="WelcomePage" />
     <MESSAGE value="Instagram" />
     <MESSAGE value="folders structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="folders structure" />
+    <MESSAGE value="LoginScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoginScreen" />
   </component>
 </project>

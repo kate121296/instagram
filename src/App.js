@@ -10,7 +10,7 @@ import LoginScreen from "./components/LoginScreen/LoginScreen";
 
 function App({
      signUpWithEmail,
-                 signInWithEmail,
+     signInWithEmail,
      user,
      error,
  }) {

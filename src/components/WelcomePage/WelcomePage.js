@@ -157,11 +157,11 @@ function WelcomePage({
                 <div className={classes.formWrapper}>
                     <div className={classes.form}>
                         <Typography className={classes.title}>Instagram</Typography>
-                        <Typography className={classes.text1}>Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</Typography>
+                        <Typography className={classes.text1}>Register to watch photos and videos of your friends.</Typography>
                         <Button variant="contained" color="primary" className={classes.button}>
-                            Войти через Facebook
+                            Sign in with Facebook
                         </Button>
-                        <Typography className={classes.text2}>ИЛИ</Typography>
+                        <Typography className={classes.text2}>OR</Typography>
                         <form className={classes.container} onSubmit={handleSubmit} >
                             <TextField
                                 type="email"
@@ -193,16 +193,16 @@ function WelcomePage({
                                 className={classes.button}
                                 onClick={handleSubmit}
                             >
-                                Регистрация
+                                Registration
                             </Button>
                         </form>
-                        <Typography className={classes.text2}>Регистрируясь, вы принимаете наши Условия, Политику использования данных и Политику в отношении файлов cookie.</Typography>
+                        <Typography className={classes.text2}>By registering, you accept our Terms, Data Use Policy and File Policy cookie.</Typography>
                     </div>
                         <div className={classes.enter}>
-                            <Typography className={classes.text3}>Есть аккаунт?</Typography>
-                            <Link to="/login"> Вход</Link>
+                            <Typography className={classes.text3}>Do you have an account?</Typography>
+                            <Link to="/login"> Sign in</Link>
                         </div>
-                    <Typography className={classes.text4}>Установите приложение.</Typography>
+                    <Typography className={classes.text4}>Install application.</Typography>
                     <div className={classes.linksWrapper}>
                         <img
                             className={classes.link}
@@ -219,17 +219,17 @@ function WelcomePage({
             </div>
             <footer className={classes.footerWrapper}>
                 <div className={classes.footer}>
-                    <Typography className={classes.text5}>О НАС</Typography>
-                    <Typography className={classes.text5}>ПОДДЕРЖКА</Typography>
-                    <Typography className={classes.text5}>ПРЕССА</Typography>
+                    <Typography className={classes.text5}>ABOUT US</Typography>
+                    <Typography className={classes.text5}>SUPPORT</Typography>
+                    <Typography className={classes.text5}>PRESS</Typography>
                     <Typography className={classes.text5}>АРІ</Typography>
-                    <Typography className={classes.text5}>ВАКАНСИИ</Typography>
-                    <Typography className={classes.text5}>КОНФИДЕНЦИАЛЬНОСТЬ</Typography>
-                    <Typography className={classes.text5}>УСЛОВИЯ</Typography>
-                    <Typography className={classes.text5}>ДИРЕКТОРИЯ</Typography>
-                    <Typography className={classes.text5}>ПРОФИЛИ</Typography>
-                    <Typography className={classes.text5}>ХЕШТЕГИ</Typography>
-                    <Typography className={classes.text5}>ЯЗИК</Typography>
+                    <Typography className={classes.text5}>VACATIONS</Typography>
+                    <Typography className={classes.text5}>CONFIDENTIALITY</Typography>
+                    <Typography className={classes.text5}>CONDITIONS</Typography>
+                    <Typography className={classes.text5}>DIRECTORY</Typography>
+                    <Typography className={classes.text5}>PROFILES</Typography>
+                    <Typography className={classes.text5}>HASHTAGES</Typography>
+                    <Typography className={classes.text5}>LANGUAGE</Typography>
                 </div>
                 <Typography className={classes.text6}>© INSTAGRAM ОТ FACEBOOK, 2019</Typography>
             </footer>
