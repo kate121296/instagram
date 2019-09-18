@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     },
     footer:{
         display:'flex',
-        width:'70%',
+        width:'75%',
         padding:10,
         margin:'0 auto',
         color:'darkblue',
@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
     text6: {
         fontSize:12,
-        marginLeft:210,
+        marginLeft:180,
         paddingBottom:20
     }
 });

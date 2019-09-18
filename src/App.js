@@ -49,6 +49,7 @@ function App({
     );
 }
 
+
 const authConfig = {
     email: {
         verifyOnSignup: false,
