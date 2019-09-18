@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
     root: {
@@ -20,6 +20,9 @@ const useStyles = makeStyles({
         width: '35%',
         marginBottom:30,
         backgroundColor:'white',
+        margin:'0 auto'
+    },
+    link2: {
         margin:'0 auto'
     },
     button: {
@@ -170,6 +173,7 @@ function LoginScreen({
                             Sign in with Facebook
                         </Button>
                         <Link
+                            className={classes.link2}
                             component="button"
                             variant="body2"
                         >
@@ -178,12 +182,7 @@ function LoginScreen({
                     </div>
                     <div className={classes.enter}>
                         <Typography className={classes.text3}>You do not have an account yet?</Typography>
-                        <Link
-                            component="button"
-                            variant="body2"
-                        >
-                            Sign up
-                        </Link>
+                        <Link to="/">Sign up</Link>
                     </div>
                     <Typography className={classes.text4}>Install application.</Typography>
                     <div className={classes.linksWrapper}>
