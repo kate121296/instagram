@@ -3,10 +3,11 @@ import { getOr } from 'lodash/fp';
 import {useSnackbar} from "notistack";
 import firebase from "./firebaseConfig";
 import withFirebaseAuth from "react-auth-firebase";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
+import HomePage from "./components/HomePage/HomePage";
 
 
 function App({
@@ -29,14 +30,24 @@ function App({
     return (
         <div>
             <Router>
-                <Route
-                    exact path="/"
-                    component={() => <WelcomePage
-                        onSignUp={signUpWithEmail}
-                        uid={uid}
+                {uid ? (
+                    <Route
+                        exact path="/"
+                        component={() => <HomePage
+                            uid={uid}
+                        />
+                        }
                     />
-                    }
-                />
+                ) : (
+                    <Route
+                        exact path="/"
+                        component={() => <WelcomePage
+                            onSignUp={signUpWithEmail}
+                            uid={uid}
+                        />
+                        }
+                    />
+                )}
                 <Route
                     path="/login"
                        component={() => <LoginScreen
