@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import {useSnackbar} from "notistack";
 
 const useStyles = makeStyles({
     root: {
@@ -127,6 +128,7 @@ const initValues = {
 function LoginScreen({
    onSignIn=()=>{},
 }) {
+    const { enqueueSnackbar } = useSnackbar();
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
     const handleChange = e => {
@@ -136,8 +138,10 @@ function LoginScreen({
     };
     const handleSubmit = () => {
         const { email, password} = values;
+        enqueueSnackbar('User already signed in', { variant: 'warning' });
         onSignIn(email, password);
     };
+
     return (
         <div >
             <div className={classes.root}>
