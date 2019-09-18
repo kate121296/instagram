@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import {useSnackbar} from "notistack";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const useStyles = makeStyles({
     root: {
@@ -217,22 +218,7 @@ function WelcomePage({
                     </div>
                 </div>
             </div>
-            <footer className={classes.footerWrapper}>
-                <div className={classes.footer}>
-                    <Typography className={classes.text5}>ABOUT US</Typography>
-                    <Typography className={classes.text5}>SUPPORT</Typography>
-                    <Typography className={classes.text5}>PRESS</Typography>
-                    <Typography className={classes.text5}>АРІ</Typography>
-                    <Typography className={classes.text5}>VACATIONS</Typography>
-                    <Typography className={classes.text5}>CONFIDENTIALITY</Typography>
-                    <Typography className={classes.text5}>CONDITIONS</Typography>
-                    <Typography className={classes.text5}>DIRECTORY</Typography>
-                    <Typography className={classes.text5}>PROFILES</Typography>
-                    <Typography className={classes.text5}>HASHTAGES</Typography>
-                    <Typography className={classes.text5}>LANGUAGE</Typography>
-                </div>
-                <Typography className={classes.text6}>© INSTAGRAM ОТ FACEBOOK, 2019</Typography>
-            </footer>
+            <Footer/>
         </div>
     );
 }
