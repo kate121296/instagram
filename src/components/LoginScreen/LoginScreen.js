@@ -3,9 +3,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { Link } from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import Footer from "../Footer/Footer";
-import {useSnackbar} from "notistack";
 
 const useStyles = makeStyles({
     root: {
@@ -100,26 +99,6 @@ const useStyles = makeStyles({
         cursor:'pointer',
         paddingBottom: 20
     },
-    footerWrapper: {
-        backgroundColor:'lightgrey',
-    },
-    footer:{
-        display:'flex',
-        width:'70%',
-        padding:10,
-        margin:'0 auto',
-        color:'darkblue',
-    },
-    text5:{
-        marginRight:20,
-        fontSize:12,
-        cursor: 'pointer'
-    },
-    text6: {
-        fontSize:12,
-        marginLeft:210,
-        paddingBottom:20
-    }
 });
 const initValues = {
     email: '',
@@ -127,10 +106,12 @@ const initValues = {
 };
 function LoginScreen({
    onSignIn=()=>{},
+    uid=null
 }) {
-    const { enqueueSnackbar } = useSnackbar();
+
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
+
     const handleChange = e => {
         const newValues = {...values};
         newValues[e.target.name] = e.target.value;
@@ -138,10 +119,9 @@ function LoginScreen({
     };
     const handleSubmit = () => {
         const { email, password} = values;
-        enqueueSnackbar('User already signed in', { variant: 'warning' });
         onSignIn(email, password);
     };
-
+    if (uid!==null) return <Redirect to="/" />;
     return (
         <div >
             <div className={classes.root}>
@@ -181,7 +161,7 @@ function LoginScreen({
                             className={classes.link2}
                             component="button"
                             variant="body2"
-                        >
+                            to="/">
                             Forgot password?
                         </Link>
                     </div>

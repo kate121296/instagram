@@ -4,6 +4,7 @@
     <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginScreen/LoginScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginScreen/LoginScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/WelcomePage/WelcomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WelcomePage/WelcomePage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568806761800</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="SignIn">
+      <created>1568818486169</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1568818486169</updated>
+    </task>
+    <task id="LOCAL-00012" summary="SignIn">
+      <created>1568818586759</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1568818586759</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,6 +194,7 @@
     <MESSAGE value="Instagram" />
     <MESSAGE value="folders structure" />
     <MESSAGE value="LoginScreen" />
-    <option name="LAST_COMMIT_MESSAGE" value="LoginScreen" />
+    <MESSAGE value="SignIn" />
+    <option name="LAST_COMMIT_MESSAGE" value="SignIn" />
   </component>
 </project>

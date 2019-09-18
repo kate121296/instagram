@@ -105,26 +105,6 @@ const useStyles = makeStyles({
         marginTop: 20,
         cursor:'pointer',
     },
-    footerWrapper: {
-        backgroundColor:'lightgrey',
-    },
-    footer:{
-        display:'flex',
-        width:'70%',
-        padding:10,
-        margin:'0 auto',
-        color:'darkblue',
-    },
-    text5:{
-        marginRight:20,
-        fontSize:12,
-        cursor: 'pointer'
-    },
-    text6: {
-        fontSize:12,
-        marginLeft:210,
-        paddingBottom:20
-    }
 });
 const initValues = {
     email: '',
