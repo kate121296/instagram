@@ -3,24 +3,13 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import {useSnackbar} from "notistack";
-import { Link } from "react-router-dom";
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles({
     root: {
-        display: 'flex',
-        alignItems:'center',
-        justifyContent: 'center',
         width: '100%',
-        backgroundColor: 'lightgrey'
-    },
-    img : {
-        width: '40%',
-        height: 600,
-    },
-    formWrapper: {
-        width: '35%',
-        padding: 20,
+        backgroundColor: 'lightgrey',
+        paddingTop:20
     },
     form: {
         display: 'flex',
@@ -28,9 +17,10 @@ const useStyles = makeStyles({
         border: '1px solid grey',
         borderRadius: 8,
         padding: 20,
-        width: '100%',
+        width: '35%',
         marginBottom:30,
         backgroundColor:'white',
+        margin:'0 auto'
     },
     button: {
         width:'60%',
@@ -63,7 +53,7 @@ const useStyles = makeStyles({
         border: '1px solid grey',
         borderRadius:8,
         padding:15,
-        width:'100%',
+        width:'35%',
         margin:'0 auto',
         backgroundColor:'white',
     },
@@ -86,8 +76,8 @@ const useStyles = makeStyles({
         color: 'grey',
         fontSize:12,
     },
-    text3: {
-        fontSize:15,
+    text3:{
+        fontSize: 15,
     },
     text4: {
         textAlign:'center',
@@ -100,9 +90,10 @@ const useStyles = makeStyles({
         alignItems:'center',
     },
     link: {
-        width:'35%',
+        width:'15%',
         marginTop: 20,
         cursor:'pointer',
+        paddingBottom: 20
     },
     footerWrapper: {
         backgroundColor:'lightgrey',
@@ -128,40 +119,26 @@ const useStyles = makeStyles({
 const initValues = {
     email: '',
     password: '',
-    confirmPassword: '',
 };
-function WelcomePage({
-     onSignUp={},
- }) {
+function LoginScreen({
+   onSignIn=()=>{},
+}) {
     const classes = useStyles();
-    const { enqueueSnackbar } = useSnackbar();
     const [values,setValues] = useState(initValues);
-
     const handleChange = e => {
         const newValues = {...values};
         newValues[e.target.name] = e.target.value;
         setValues(newValues);
     };
-    const handleSubmit = ()=> {
-        const {email, password, confirmPassword} = values;
-        if(password!== confirmPassword) {
-            enqueueSnackbar('Passwords isn"t match!', { variant: 'warning' });
-            return
-        }
-        onSignUp(email, password);
+    const handleSubmit = () => {
+        const { email, password} = values;
+        onSignIn(email, password);
     };
     return (
         <div >
             <div className={classes.root}>
-                <img className={classes.img} src="https://storeinua.com/image/catalog/iPhone%20SE%20/iphone-se-rose%20gold.png" alt=""/>
-                <div className={classes.formWrapper}>
                     <div className={classes.form}>
                         <Typography className={classes.title}>Instagram</Typography>
-                        <Typography className={classes.text1}>Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</Typography>
-                        <Button variant="contained" color="primary" className={classes.button}>
-                            Войти через Facebook
-                        </Button>
-                        <Typography className={classes.text2}>ИЛИ</Typography>
                         <form className={classes.container} onSubmit={handleSubmit} >
                             <TextField
                                 type="email"
@@ -179,29 +156,35 @@ function WelcomePage({
                                 value={values.password}
                                 onChange={handleChange}
                             />
-                            <TextField
-                                type="password"
-                                name="confirmPassword"
-                                variant="outlined"
-                                placeholder="Confirm password"
-                                value={values.confirmPassword}
-                                onChange={handleChange}
-                            />
                             <Button
                                 variant="contained"
                                 color="primary"
                                 className={classes.button}
                                 onClick={handleSubmit}
                             >
-                                Регистрация
+                                Войти
                             </Button>
                         </form>
-                        <Typography className={classes.text2}>Регистрируясь, вы принимаете наши Условия, Политику использования данных и Политику в отношении файлов cookie.</Typography>
+                        <Typography className={classes.text2}>ИЛИ</Typography>
+                        <Button variant="contained" color="primary" className={classes.button}>
+                            Войти через Facebook
+                        </Button>
+                        <Link
+                            component="button"
+                            variant="body2"
+                        >
+                            Забыли пароль?
+                        </Link>
                     </div>
-                        <div className={classes.enter}>
-                            <Typography className={classes.text3}>Есть аккаунт?</Typography>
-                            <Link to="/login"> Вход</Link>
-                        </div>
+                    <div className={classes.enter}>
+                        <Typography className={classes.text3}>У вас ещё нет аккаунта?</Typography>
+                        <Link
+                            component="button"
+                            variant="body2"
+                        >
+                            Зарегистрироваться
+                        </Link>
+                    </div>
                     <Typography className={classes.text4}>Установите приложение.</Typography>
                     <div className={classes.linksWrapper}>
                         <img
@@ -216,7 +199,6 @@ function WelcomePage({
                         />
                     </div>
                 </div>
-            </div>
             <footer className={classes.footerWrapper}>
                 <div className={classes.footer}>
                     <Typography className={classes.text5}>О НАС</Typography>
@@ -237,4 +219,4 @@ function WelcomePage({
     );
 }
 
-export default WelcomePage;
+export default LoginScreen;
