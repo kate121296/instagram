@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 
+
 function App({
      signUpWithEmail,
      signInWithEmail,
@@ -33,7 +34,8 @@ function App({
                     component={() => <WelcomePage
                         onSignUp={signUpWithEmail}
                         uid={uid}
-                    />}
+                    />
+                    }
                 />
                 <Route
                     path="/login"
@@ -42,7 +44,9 @@ function App({
                            onSignIn={signInWithEmail}
                        />}
                 />
+
             </Router>
+
         </div>
     );
 }
