@@ -15,7 +15,6 @@ const useStyles = makeStyles({
         justifyContent:'center',
         alignItems:'center',
         width:'100%',
-        border:'2px solid black',
 
     },
     image: {
