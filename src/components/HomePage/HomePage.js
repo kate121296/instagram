@@ -7,6 +7,7 @@ import CompasIcon from "../Icons/CompasIcon";
 import HeartIcon from "../Icons/HeartIcon";
 import HumanIcon from "../Icons/HumanIcon";
 import { IconButton } from '@material-ui/core';
+import SubHeader from "../SubHeader/SubHeader";
 
 const useStyles = makeStyles({
     root: {
@@ -65,38 +66,42 @@ function HomePage({
 }) {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
-            <div className={classes.part1}>
-                <CameraIcon />
-                <Typography className={classes.space}>|</Typography>
-                <Typography className={classes.text}>Instagram</Typography>
+        <div>
+            <div className={classes.root}>
+                <div className={classes.part1}>
+                    <CameraIcon />
+                    <Typography className={classes.space}>|</Typography>
+                    <Typography className={classes.text}>Instagram</Typography>
+                </div>
+                <div className={classes.part2}>
+                    <Input
+                        disableUnderline
+                        id="outlined-email-input"
+                        label="Search"
+                        className={classes.textField}
+                        type="text"
+                        name="Search"
+                        autoComplete="email"
+                        margin="normal"
+                        variant="outlined"
+                        placeholder="Search"
+                    />
+                </div>
+                <div className={classes.part3}>
+                    <IconButton>
+                        <CompasIcon  />
+                    </IconButton>
+                    <IconButton className={classes.spacing}>
+                        <HeartIcon />
+                    </IconButton>
+                    <IconButton className={classes.spacing}>
+                        <HumanIcon />
+                    </IconButton>
+                </div>
             </div>
-            <div className={classes.part2}>
-                <Input
-                    disableUnderline
-                    id="outlined-email-input"
-                    label="Search"
-                    className={classes.textField}
-                    type="text"
-                    name="Search"
-                    autoComplete="email"
-                    margin="normal"
-                    variant="outlined"
-                    placeholder="Search"
-                />
-            </div>
-            <div className={classes.part3}>
-                <IconButton>
-                    <CompasIcon  />
-                </IconButton>
-                <IconButton className={classes.spacing}>
-                    <HeartIcon />
-                </IconButton>
-                <IconButton className={classes.spacing}>
-                    <HumanIcon />
-                </IconButton>
-            </div>
+            <SubHeader/>
         </div>
+
     );
 }
 

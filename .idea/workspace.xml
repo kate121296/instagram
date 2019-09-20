@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7feb0044-1fec-4415-8456-1269138a6645" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/CameraIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/CompasIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/HeartIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Icons/HumanIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Icons/SettingIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SubHeader/SubHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/HomePage.js" afterDir="false" />
     </list>
@@ -46,11 +44,12 @@
     <property name="ts.external.directory.path" value="E:\webstorm\WebStorm 2019.2.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\webstorm\projects\instagram\src\components\Icons" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\webstorm\projects\instagram\src\components\WelcomePage" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\webstorm\projects\instagram\src\components\Icons" />
+      <recent name="E:\webstorm\projects\instagram\src\components\SubHeader" />
     </key>
   </component>
   <component name="RunDashboard">
