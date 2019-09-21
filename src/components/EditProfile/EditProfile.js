@@ -67,7 +67,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: 8,
         margin:'0 auto',
         marginTop:70,
-        backgroundColor:'white'
+        backgroundColor:'white',
     },
     profile:{
         width: '50%',
@@ -100,7 +100,7 @@ const useStyles = makeStyles(theme => ({
         width: '50%',
         borderRadius: 8,
         margin:'0 auto',
-        marginTop:20
+        marginTop:20,
     },
     form: {
         display:'flex',
@@ -122,6 +122,7 @@ const useStyles = makeStyles(theme => ({
     button2:{
         marginTop:30,
         margin:'0 auto',
+        marginBottom:40
     }
 }));
 const initValues = {
