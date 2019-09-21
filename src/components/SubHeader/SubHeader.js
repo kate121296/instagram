@@ -3,6 +3,7 @@ import {makeStyles} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Button from '@material-ui/core/Button';
 import IconButton from "@material-ui/core/IconButton";
+import { Link } from "react-router-dom";
 
 import SettingIcon from "../Icons/SettingIcon";
 
@@ -73,7 +74,7 @@ function SubHeader() {
                 <div className={classes.header}>
                     <Typography className={classes.name}>katysha121296</Typography>
                     <Button variant="contained" className={classes.button}>
-                        Edit profile
+                        <Link style={{ textDecoration: 'none' }} to="/edit">Edit profile</Link>
                     </Button>
                     <IconButton className={classes.spacing}>
                         <SettingIcon />
