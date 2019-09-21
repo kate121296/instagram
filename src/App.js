@@ -16,6 +16,7 @@ function App({
      signInWithEmail,
      user,
      error,
+    saveDatas,
  }) {
     const uid = getOr(null, ['uid'], user);
     const { enqueueSnackbar } = useSnackbar();
@@ -59,6 +60,7 @@ function App({
                 <Route
                     path="/edit"
                     component={() => <EditProfile
+                        onSaveDatas={saveDatas}
                     />}
                 />
             </Router>
