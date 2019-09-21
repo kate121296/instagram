@@ -76,9 +76,11 @@ function SubHeader() {
             <div className={classes.headerWrapper}>
                 <div className={classes.header}>
                     <Typography className={classes.name}>katysha121296</Typography>
-                    <Button variant="contained" className={classes.button}>
-                        <Link style={{ textDecoration: 'none' }} to="/edit">Edit profile</Link>
-                    </Button>
+                    <Link style={{ textDecoration: 'none' }} to="/edit">
+                        <Button variant="contained" className={classes.button}>
+                            Edit profile
+                        </Button>
+                    </Link>
                     <IconButton className={classes.spacing}>
                         <SettingIcon />
                     </IconButton>
