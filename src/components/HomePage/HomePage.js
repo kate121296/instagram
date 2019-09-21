@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     },
     part1:{
         width:'15%',
-        margin:'0 auto',
+        margin: '0 auto',
         padding:10,
         display: 'flex',
         justifyContent: 'center',
