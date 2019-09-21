@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {IconButton, Input, makeStyles} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -124,9 +124,26 @@ const useStyles = makeStyles(theme => ({
         margin:'0 auto',
     }
 }));
-
+const initValues = {
+    name: '',
+    username: '',
+    website: '',
+    about: '',
+    email: '',
+    phone: '',
+    sex: '',
+};
 function EditProfile() {
     const classes = useStyles();
+    const [values,setValues] = useState(initValues);
+    const handleChange = e => {
+        const newValues = {...values};
+        newValues[e.target.name] = e.target.value;
+        setValues(newValues);
+    };
+    const handleSubmit = () => {
+        console.log(values)
+    };
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -180,8 +197,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="name"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.name}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -192,8 +209,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="username"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.username}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -204,8 +221,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="website"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.website}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -216,8 +233,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="about"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.about}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -228,8 +245,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="email"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.email}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -240,8 +257,8 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="phone"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.phone}
+                            onChange={handleChange}
                         />
                     </div>
                     <div className={classes.form}>
@@ -252,11 +269,16 @@ function EditProfile() {
                             variant="outlined"
                             placeholder="sex"
                             className={classes.input}
-                            /*value={values.email}
-                            onChange={handleChange}*/
+                            value={values.sex}
+                            onChange={handleChange}
                         />
                     </div>
-                    <Button variant="contained" color="primary" className={classes.button2}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes.button2}
+                        onClick={handleSubmit}
+                    >
                         Send
                     </Button>
                 </form>
