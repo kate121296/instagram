@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import WelcomePage from "./components/WelcomePage/WelcomePage";
 import LoginScreen from "./components/LoginScreen/LoginScreen";
 import HomePage from "./components/HomePage/HomePage";
+import EditProfile from "./components/EditProfile/EditProfile";
 
 
 function App({
@@ -54,6 +55,11 @@ function App({
                            uid={uid}
                            onSignIn={signInWithEmail}
                        />}
+                />
+                <Route
+                    path="/edit"
+                    component={() => <EditProfile
+                    />}
                 />
             </Router>
         </div>
