@@ -133,9 +133,7 @@ const initValues = {
     phone: '',
     sex: '',
 };
-function EditProfile({
-     onSaveDatas=()=>{}
- }) {
+function EditProfile() {
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
     const handleChange = e => {
@@ -144,8 +142,7 @@ function EditProfile({
         setValues(newValues);
     };
     const handleSubmit = () => {
-        const { name, username, website, about, email, phone, sex} = values;
-        onSaveDatas(name, username, website, about, email, phone, sex);
+        console.log(values)
     };
     return (
         <div className={classes.root}>
