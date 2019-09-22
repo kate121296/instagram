@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         border:'1px solid black',
         marginRight:21,
         marginBottom:21,
-        borderRadius:8
+        borderRadius:8,
     }
 });
 function Photoes() {
