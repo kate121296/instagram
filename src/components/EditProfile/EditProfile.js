@@ -154,6 +154,7 @@ function EditProfile({
         }
     }, [isUserProfileExist, userProfile]);
 
+
     const handleChange = e => {
         const newValues = {...values};
         newValues[e.target.name] = e.target.value;
