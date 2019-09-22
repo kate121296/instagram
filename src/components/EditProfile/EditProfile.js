@@ -141,16 +141,16 @@ const initValues = {
 function EditProfile({
     userProfile=null,
     uid=null,
-     onAddUserProfile = () => {},
+    onAddUserProfile = () => {},
     onEditUserProfile = () => {},
  }) {
     const { enqueueSnackbar } = useSnackbar();
     const initUserName=getOr('', ['username'], userProfile);
-    const isUserProfileExist = Boolean(userProfile)
+    const isUserProfileExist = Boolean(userProfile);
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
     const [isImageFormOpen,setIsImageFormOpen] = useState(false);
-    const avatarSrc = isEmpty(values.image) ? 'https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg' : values.image;
+    const avatarSrc = isEmpty(values.image) ? 'https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg' : userProfile.image;
     useEffect(() => {
         if(isUserProfileExist) {
             setValues(userProfile)
@@ -162,7 +162,8 @@ function EditProfile({
         newValues[e.target.name] = e.target.value;
         setValues(newValues);
     };
-    const handleSubmit = () => {
+    const handleSubmit = (showImageSnackBar = false) => {
+        console.log(showImageSnackBar);
         const userProfie = {
             userId: uid,
             ...values,
@@ -172,16 +173,19 @@ function EditProfile({
         } else {
             onAddUserProfile(userProfie)
         }
-        const snackMessage = isUserProfileExist ? 'Profile edit successfully' : 'Profile created successfully';
+        const snackMessageAfterUploadImage = 'Image uploaded succesfully';
+        const snackMessageUpdateAllData = isUserProfileExist ? 'Profile edit successfully' : 'Profile created successfully';
+        const snackMessage = showImageSnackBar ? snackMessageAfterUploadImage : snackMessageUpdateAllData;
         enqueueSnackbar(snackMessage, { variant: 'success' });
     };
     const handleClickAway=()=>{
         setIsImageFormOpen(false);
-        console.log(values.image)
+       handleSubmit(true)
+
     };
     const handleImageFormOpen=()=>{
         setIsImageFormOpen(true)
-    }
+    };
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -328,7 +332,7 @@ function EditProfile({
                         variant="contained"
                         color="primary"
                         className={classes.button2}
-                        onClick={handleSubmit}
+                        onClick={() => handleSubmit()}
                     >
                         {isUserProfileExist ? 'Edit' : 'Send'}
                     </Button>
