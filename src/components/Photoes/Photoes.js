@@ -8,7 +8,7 @@ const useStyles = makeStyles({
         marginTop:100,
         padding:20,
         display:'flex',
-        flexWrap:'wrap'
+        flexWrap:'wrap',
     },
     image:{
         width: '31%',
@@ -29,7 +29,6 @@ function Photoes() {
             <img className={classes.image} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR1cNEHIBHr9rbzWqE-ZOcYmxclCV4qbJOPz-JkK1Rke-Dw-7b" alt=""/>
             <img className={classes.image} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDDNtD-vbueTKpfWMgnPR6Chkpkmt0Eef0lv8_-ah60iH5JSI" alt=""/>
         </div>
-
     );
 }
 
