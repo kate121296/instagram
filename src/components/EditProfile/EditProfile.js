@@ -8,8 +8,9 @@ import CompasIcon from "../Icons/CompasIcon";
 import HeartIcon from "../Icons/HeartIcon";
 import HumanIcon from "../Icons/HumanIcon";
 import CameraIcon from "../Icons/CameraIcon";
-import {getOr} from "lodash/fp";
+import {getOr, isEmpty} from "lodash/fp";
 import {useSnackbar} from "notistack";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 const useStyles = makeStyles(theme => ({
     root:{
@@ -135,6 +136,7 @@ const initValues = {
     email: '',
     phone: '',
     sex: '',
+    image:''
 };
 function EditProfile({
     userProfile=null,
@@ -147,7 +149,8 @@ function EditProfile({
     const isUserProfileExist = Boolean(userProfile)
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
-
+    const [isImageFormOpen,setIsImageFormOpen] = useState(false);
+    const avatarSrc = isEmpty(values.image) ? 'https://www.hertrack.com/wp-content/uploads/2018/10/no-image.jpg' : values.image;
     useEffect(() => {
         if(isUserProfileExist) {
             setValues(userProfile)
@@ -172,6 +175,13 @@ function EditProfile({
         const snackMessage = isUserProfileExist ? 'Profile edit successfully' : 'Profile created successfully';
         enqueueSnackbar(snackMessage, { variant: 'success' });
     };
+    const handleClickAway=()=>{
+        setIsImageFormOpen(false);
+        console.log(values.image)
+    };
+    const handleImageFormOpen=()=>{
+        setIsImageFormOpen(true)
+    }
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -207,12 +217,26 @@ function EditProfile({
             </div>
             <div className={classes.data}>
                 <div className={classes.profile}>
-                    <img className={classes.avatar} src="https://flowerlodge.co.uk/Resources/parallax2.jpeg" alt=""/>
+                    <img className={classes.avatar} src={avatarSrc} alt=""/>
                     <div className={classes.text1}>
                         <Typography className={classes.name}>{initUserName}</Typography>
-                        <Button  color="primary" className={classes.button}>
-                            change profile photo
-                        </Button>
+                        {isImageFormOpen ? (
+                            <ClickAwayListener onClickAway={handleClickAway}>
+                                <TextField
+                                    type="text"
+                                    name="image"
+                                    variant="outlined"
+                                    placeholder="Enter image src"
+                                    className={classes.input}
+                                    value={values.image}
+                                    onChange={handleChange}
+                                />
+                            </ClickAwayListener>
+                        ):(
+                            <Button  color="primary" className={classes.button} onClick={handleImageFormOpen}>
+                                change profile photo
+                            </Button>
+                        )}
                     </div>
                 </div>
                 <form className={classes.formWrapper}>
