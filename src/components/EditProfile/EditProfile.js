@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {IconButton, Input, makeStyles} from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -8,6 +8,8 @@ import CompasIcon from "../Icons/CompasIcon";
 import HeartIcon from "../Icons/HeartIcon";
 import HumanIcon from "../Icons/HumanIcon";
 import CameraIcon from "../Icons/CameraIcon";
+import {getOr} from "lodash/fp";
+import {useSnackbar} from "notistack";
 
 const useStyles = makeStyles(theme => ({
     root:{
@@ -134,16 +136,41 @@ const initValues = {
     phone: '',
     sex: '',
 };
-function EditProfile() {
+function EditProfile({
+    userProfile=null,
+    uid=null,
+     onAddUserProfile = () => {},
+    onEditUserProfile = () => {},
+ }) {
+    const { enqueueSnackbar } = useSnackbar();
+    const initUserName=getOr('', ['username'], userProfile);
+    const isUserProfileExist = Boolean(userProfile)
     const classes = useStyles();
     const [values,setValues] = useState(initValues);
+
+    useEffect(() => {
+        if(isUserProfileExist) {
+            setValues(userProfile)
+        }
+    }, [isUserProfileExist, userProfile]);
+
     const handleChange = e => {
         const newValues = {...values};
         newValues[e.target.name] = e.target.value;
         setValues(newValues);
     };
     const handleSubmit = () => {
-        console.log(values)
+        const userProfie = {
+            userId: uid,
+            ...values,
+        };
+        if (isUserProfileExist) {
+            onEditUserProfile(userProfie, userProfile.profileId)
+        } else {
+            onAddUserProfile(userProfie)
+        }
+        const snackMessage = isUserProfileExist ? 'Profile edit successfully' : 'Profile created successfully';
+        enqueueSnackbar(snackMessage, { variant: 'success' });
     };
     return (
         <div className={classes.root}>
@@ -162,7 +189,6 @@ function EditProfile() {
                         type="text"
                         name="Search"
                         autoComplete="email"
-                        margin="normal"
                         variant="outlined"
                         placeholder="Search"
                     />
@@ -183,7 +209,7 @@ function EditProfile() {
                 <div className={classes.profile}>
                     <img className={classes.avatar} src="https://flowerlodge.co.uk/Resources/parallax2.jpeg" alt=""/>
                     <div className={classes.text1}>
-                        <Typography className={classes.name}>katysha121296</Typography>
+                        <Typography className={classes.name}>{initUserName}</Typography>
                         <Button  color="primary" className={classes.button}>
                             change profile photo
                         </Button>
@@ -280,7 +306,7 @@ function EditProfile() {
                         className={classes.button2}
                         onClick={handleSubmit}
                     >
-                        Send
+                        {isUserProfileExist ? 'Edit' : 'Send'}
                     </Button>
                 </form>
             </div>
@@ -288,4 +314,4 @@ function EditProfile() {
     );
 }
 
-export default EditProfile;
+export default EditProfile
