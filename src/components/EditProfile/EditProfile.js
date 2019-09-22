@@ -11,6 +11,7 @@ import CameraIcon from "../Icons/CameraIcon";
 import {getOr, isEmpty} from "lodash/fp";
 import {useSnackbar} from "notistack";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     root:{
@@ -126,6 +127,10 @@ const useStyles = makeStyles(theme => ({
         marginTop:30,
         margin:'0 auto',
         marginBottom:40
+    },
+    link:{
+        textDecoration:'none',
+        color:'black'
     }
 }));
 const initValues = {
@@ -192,7 +197,9 @@ function EditProfile({
                 <div className={classes.part1}>
                     <CameraIcon />
                     <Typography className={classes.space}>|</Typography>
-                    <Typography className={classes.text}>Instagram</Typography>
+                    <Link to="/" className={classes.link}>
+                        <Typography className={classes.text}>Instagram</Typography>
+                    </Link>
                 </div>
                 <div className={classes.part2}>
                     <Input
