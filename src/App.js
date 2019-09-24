@@ -12,6 +12,7 @@ import HomePage from "./components/HomePage/HomePage";
 import EditProfile from "./components/EditProfile/EditProfile";
 
 function App({
+    addPhoto,
     editUserProfile,
     usersProfile,
     addUserProfile,
@@ -19,6 +20,7 @@ function App({
     signInWithEmail,
     user,
     error,
+    photos,
  }) {
     const uid = getOr(null, ['uid'], user);
     let userProfile = null;
@@ -50,6 +52,8 @@ function App({
                         exact path="/"
                         component={() => <HomePage
                             uid={uid}
+                            onAddPhoto={addPhoto}
+                            photos={photos}
                         />
                         }
                     />
@@ -95,7 +99,9 @@ const authConfig = {
 const component = withFirebaseAuth(App, firebase, authConfig)
 const mapFirebaseToProps = (props, ref) => ({
     usersProfile: 'usersProfile',
+    photos: 'photos',
     addUserProfile: userProfile => ref('usersProfile').push(userProfile),
+    addPhoto: photo => ref('photos').push(photo),
     editUserProfile: (userProfile, profileId) => ref(`usersProfile/${profileId}`).set(userProfile),
 });
 

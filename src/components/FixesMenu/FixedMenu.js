@@ -29,17 +29,30 @@ const useStyles = makeStyles({
     }
 });
 
-function FixedMenu() {
+function FixedMenu({
+   onAddNewPhoto=()=>{}
+}) {
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
-
-    function handleClickOpen() {
+    const [value, setValue] = React.useState('');
+    const handleChange = e => {
+        setValue(e.target.value)
+    };
+    const handleSubmit=()=>{
+        onAddNewPhoto(value);
+        handleClose();
+        handleResedValue()
+    };
+    const handleResedValue=()=>{
+        setValue('')
+    };
+    const handleClickOpen=()=> {
         setOpen(true);
-    }
+    };
 
-    function handleClose() {
+    const handleClose=()=> {
         setOpen(false);
-    }
+    };
     return (
         <div>
             <footer className={classes.footerWrapper}>
@@ -52,31 +65,32 @@ function FixedMenu() {
                 <IconButton className={classes.icon} onClick={handleClickOpen}>
                     <PlusIcon/>
                 </IconButton>
-                <IconButton className={classes.icon}n>
+                <IconButton className={classes.icon}>
                     <HeartIcon/>
                 </IconButton>
                 <IconButton className={classes.icon}>
                     <HumanIcon/>
                 </IconButton>
             </footer>
-            <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Add new photo to the profile</DialogTitle>
+            <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Add new photo to the profile</DialogTitle>
                 <DialogContent>
                     <TextField
                         autoFocus
-                        margin="dense"
                         id="name"
                         label="Add new src of the photo"
                         type="text"
                         fullWidth
+                        value={value}
+                        onChange={handleChange}
                     />
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary">
                         Cancel
                     </Button>
-                    <Button onClick={handleClose} color="primary">
-                        Subscribe
+                    <Button onClick={handleSubmit} color="primary">
+                        Add
                     </Button>
                 </DialogActions>
             </Dialog>
