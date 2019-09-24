@@ -78,7 +78,6 @@ function Header() {
                         type="text"
                         name="Search"
                         autoComplete="email"
-                        margin="normal"
                         variant="outlined"
                         placeholder="Search"
                     />
