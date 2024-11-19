@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "firebase": "^6.6.1",
+    "firebase": "^10.9.0",
     "lodash": "latest",
     "react": "^16.9.0",
     "react-auth-firebase": "^1.2.1",
